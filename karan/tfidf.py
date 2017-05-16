@@ -12,6 +12,7 @@ data = np.sort(data, axis=1)
 
 # processed data
 varianceData = []
+meanData = []
 
 # plot things
 plt.figure()
@@ -24,7 +25,9 @@ for wordIndex in range(rows):
     plt.plot(wordData)
 
     # compute mean and variance
+    mean = np.mean(wordData)
     variance = np.var(wordData)
+    meanData.append(mean)
     varianceData.append(variance)
 
 plt.xlabel("Document")
@@ -35,7 +38,7 @@ plt.savefig("TF-IDF")
 plt.figure()
 plt.hist(varianceData, 50)
 plt.xlabel("Variance")
-plt.ylabel("Variance")
+plt.ylabel("Number of Words")
 plt.title("Variance for word plots")
 plt.savefig("variance_histogram")
 
@@ -45,3 +48,24 @@ plt.xlabel("Variance")
 plt.ylabel("Variance")
 plt.title("Variance for word plots")
 plt.savefig("variance_scatter")
+
+plt.figure()
+plt.hist(meanData, 50)
+plt.xlabel("Mean")
+plt.ylabel("Number of Words")
+plt.title("Mean for word plots")
+plt.savefig("mean_histogram")
+
+plt.figure()
+plt.scatter(meanData, meanData)
+plt.xlabel("Mean")
+plt.ylabel("Mean")
+plt.title("Mean for word plots")
+plt.savefig("mean_scatter")
+
+plt.figure()
+plt.scatter(meanData, varianceData)
+plt.xlabel("Mean")
+plt.ylabel("Varance")
+plt.title("Mean and variance for word plots")
+plt.savefig("mean_variance_scatter")
