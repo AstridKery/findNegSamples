@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.preprocessing import normalize
+from sklearn.cluster import KMeans
 
 # load data
 data = np.load("AllWords_NumpyResults.npy")
@@ -29,6 +30,12 @@ for wordIndex in range(rows):
     variance = np.var(wordData)
     meanData.append(mean)
     varianceData.append(variance)
+
+# cluster based on variance
+kmeans = KMeans(n_clusters=3, random_state=0).fit(np.array(varianceData).reshape(-1,1))
+print sum(kmeans.labels_ == 0)
+print sum(kmeans.labels_ == 1)
+print sum(kmeans.labels_ == 2)
 
 # plot things
 plt.xlabel("Document")
