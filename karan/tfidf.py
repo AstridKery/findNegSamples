@@ -31,7 +31,7 @@ plt.title("Sorted TF-IDF values for different words")
 plt.savefig("TF-IDF")
 
 plt.figure()
-plt.scatter(varianceData, varianceData)
+plt.hist(varianceData, 50)
 plt.xlabel("Variance")
 plt.ylabel("Variance")
 plt.title("Variance for word plots")
