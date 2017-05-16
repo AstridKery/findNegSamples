@@ -51,7 +51,7 @@ plt.title("Variance for word plots")
 plt.savefig("variance_histogram")
 
 plt.figure()
-plt.scatter(varianceData, varianceData)
+plt.scatter(varianceData, varianceData, c=kmeans.labels_)
 plt.xlabel("Variance")
 plt.ylabel("Variance")
 plt.title("Variance for word plots")
