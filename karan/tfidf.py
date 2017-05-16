@@ -30,6 +30,7 @@ for wordIndex in range(rows):
     meanData.append(mean)
     varianceData.append(variance)
 
+# plot things
 plt.xlabel("Document")
 plt.ylabel("TF-IDF")
 plt.title("Sorted TF-IDF values for different words")
