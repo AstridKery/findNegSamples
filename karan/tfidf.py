@@ -54,6 +54,8 @@ plt.figure()
 plt.scatter(varianceData, varianceData, c=kmeans.labels_)
 plt.xlabel("Variance")
 plt.ylabel("Variance")
+cbar = plt.colorbar()
+cbar.set_label("Cluster label", rotation=270)
 plt.title("Variance for word plots")
 plt.savefig("variance_scatter")
 
