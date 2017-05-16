@@ -1,8 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.preprocessing import normalize
 
 # load data
 data = np.load("AllWords_NumpyResults.npy")
+data = normalize(data)
 rows, columns = data.shape
 
 # sort per row
